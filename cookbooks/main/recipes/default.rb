@@ -7,6 +7,10 @@ package "emacs23-nox"
 include_recipe "nginx::source"
 
 
+group "admin" do
+  gid 113
+end
+
 user node["user"]["name"] do
   password node["user"]["password"]
   gid "admin"
@@ -18,6 +22,7 @@ end
 template "/home/#{node["user"]["name"]}/.zshrc" do
   source "zshrc.erb"
   owner node["user"]["name"]
+  group "admin"
 end
 
 service "nginx" do
