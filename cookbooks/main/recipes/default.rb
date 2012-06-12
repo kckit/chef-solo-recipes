@@ -2,6 +2,9 @@ package "git-core"
 package "python-software-properties"
 package "zsh"
 
+include_recipe "nginx::source"
+
+
 user node["user"]["name"] do
   password node["user"]["password"]
   gid "admin"
@@ -15,6 +18,10 @@ template "/home/#{node["user"]["name"]}/.zshrc" do
   owner node["user"]["name"]
 end
 
-execute "add-apt-repository ppa:nginx/stable" do
-  action :run
+service "nginx" do
+  action :start
 end
+
+package "mysql-server"
+package "mysql-client"
+package "libmysqlclient-dev"

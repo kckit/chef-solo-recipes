@@ -4,5 +4,8 @@
     "password": "$1$a4I8NHpx$H/bA5JKFS1FHQrWlWckOE.",
     "ls_color": true
   },
+  "nginx": {
+    "version": "1.2.1"
+  },
   "run_list":["recipe[main]"]
 }
