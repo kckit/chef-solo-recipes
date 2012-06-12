@@ -1,3 +1,4 @@
+include_recipe "apt"
 package "git-core"
 package "python-software-properties"
 package "zsh"
@@ -28,7 +29,7 @@ package "libmysqlclient-dev"
 
 execute "add-apt-repository ppa:chris-lea/node.js" do
   action :run
-endend
+end
 
 include_recipe "apt"
 

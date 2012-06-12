@@ -7,5 +7,17 @@
   "nginx": {
     "version": "1.2.1"
   },
-  "run_list":["recipe[main]"]
+  "rvm": {
+    "user_installs": [
+      {
+        "user": "deployer",
+        "global_gems": [
+          {
+            "name": "bundler"
+          }
+        ]
+      }
+    ]
+  },
+  "run_list":["recipe[main]","recipe[rvm::user]"]
 }
