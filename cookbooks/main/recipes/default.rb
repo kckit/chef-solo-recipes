@@ -28,4 +28,8 @@ package "libmysqlclient-dev"
 
 execute "add-apt-repository ppa:chris-lea/node.js" do
   action :run
-end
+endend
+
+include_recipe "apt"
+
+package "nodejs"
