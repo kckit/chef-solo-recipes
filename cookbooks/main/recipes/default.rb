@@ -14,3 +14,7 @@ template "/home/#{node["user"]["name"]}/.zshrc" do
   source "zshrc.erb"
   owner node["user"]["name"]
 end
+
+execute "add-apt-repository ppa:nginx/stable" do
+  action :run
+end
