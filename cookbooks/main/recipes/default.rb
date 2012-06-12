@@ -2,6 +2,7 @@ include_recipe "apt"
 package "git-core"
 package "python-software-properties"
 package "zsh"
+package "emacs23-nox"
 
 include_recipe "nginx::source"
 
