@@ -19,5 +19,13 @@
       }
     ]
   },
-  "run_list":["recipe[main]","recipe[rvm::user]"]
+  "redis": {
+    "password": "uYwOwXNtoLFjGXiDhQldHcH2pjNpSuuncRYFAOlwECpH4oEMZy",
+    "daemonize": "yes",
+    "source": {
+      "version": "2.4.14",
+      "tar_checksum": "4f26ae8cad0f9143ef30b9bb9565a1618570654eb86ee911c20966971660cc7e"
+    }
+  },
+  "run_list":["recipe[main]","recipe[rvm::user]", "recipe[redis::source]"]
 }
