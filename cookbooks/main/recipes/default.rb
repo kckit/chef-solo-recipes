@@ -8,7 +8,7 @@ include_recipe "nginx::source"
 
 
 group "admin" do
-  gid 113
+  gid 111
 end
 
 user node["user"]["name"] do
