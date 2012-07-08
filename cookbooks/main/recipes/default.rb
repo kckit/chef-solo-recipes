@@ -47,11 +47,13 @@ package "imagemagick"
 package "cmake"
 package "gettext"
 remote_file "/home/deployer/opencc-0.3.0.tar.gz" do
+  owner "deployer"
   source "http://opencc.googlecode.com/files/opencc-0.3.0.tar.gz"
   action :create_if_missing
 end
 
 bash "compile_opencc" do
+  user "deployer"
   cwd "/home/deployer"
   code <<-EOH
     tar zxf opencc-0.3.0.tar.gz
