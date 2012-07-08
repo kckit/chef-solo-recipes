@@ -61,6 +61,6 @@ bash "compile_opencc" do
     mkdir build
     cd build
     cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -D ENABLE_GETTEXT:BOOL=ON ..
-    make & make install
+    make & sudo make install
   EOH
 end
